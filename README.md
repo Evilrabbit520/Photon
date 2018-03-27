@@ -43,3 +43,4 @@ SWL_0内部授权
 [.NET Framework 4.6.2]: https://www.microsoft.com/en-US/download/details.aspx?id=53344
 [Visual Studio 2015]: https://www.visualstudio.com/downloads/
 [.NET Framework 4.6.2 Developer Pack]: https://www.microsoft.com/download/details.aspx?id=53321
+[Photon官网]：https://photon.idigitaltechnology.com/
