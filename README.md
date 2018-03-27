@@ -1,7 +1,6 @@
 Photon for windows桌面版本
 =======================
 
-[![Build Status]][Appveyor]
 
 ## Git 库
 本Git库只是版本更新库，不上传任何开发内容，并且遵循 SWL_0内部授权
