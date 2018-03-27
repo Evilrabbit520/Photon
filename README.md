@@ -1,4 +1,4 @@
-Photon Windows桌边版本
+Photon for windows桌面版本
 =======================
 
 [![Build Status]][Appveyor]
