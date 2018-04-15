@@ -17,7 +17,6 @@ namespace Photon.View
     public partial class ConfigForm : Form
     {
         private PhotonController controller;
-
         // this is a copy of configuration that we are working on
         private Configuration _modifiedConfiguration;
         private int _lastSelectedIndex = -1;
