@@ -42,6 +42,7 @@ namespace Photon.View
 
         private void UpdateTexts()
         {
+
             AddBtn.Text = I18N.GetString("&Add");
             DeleteBtn.Text = I18N.GetString("&Delete");
             DuplicateBtn.Text = I18N.GetString("Dupli&cate");
