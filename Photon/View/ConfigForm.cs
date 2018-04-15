@@ -25,7 +25,6 @@ namespace Photon.View
         {
             this.Font = System.Drawing.SystemFonts.MessageBoxFont;
             InitializeComponent();
-
             // a dirty hack
             this.ServersListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PerformLayout();
