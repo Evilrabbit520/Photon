@@ -32,7 +32,6 @@ namespace Photon.View
             this.Icon = Icon.FromHandle(Resources.ssw128.GetHicon());
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
-
             LoadCurrentConfiguration();
         }
 
