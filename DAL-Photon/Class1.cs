@@ -9,5 +9,6 @@ namespace DAL_Photon
     public class Class1
     {
 
+
     }
 }
