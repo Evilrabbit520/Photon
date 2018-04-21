@@ -25,6 +25,7 @@ namespace Photon.View
         {
             this.Font = System.Drawing.SystemFonts.MessageBoxFont;
             InitializeComponent();
+            
             // a dirty hack
             this.ServersListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PerformLayout();
@@ -469,5 +470,10 @@ namespace Photon.View
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Landing form1 = new Landing();
+            form1.Show();
+        }
     }
 }
