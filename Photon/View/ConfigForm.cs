@@ -470,10 +470,5 @@ namespace Photon.View
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Landing form1 = new Landing();
-            form1.Show();
-        }
     }
 }
