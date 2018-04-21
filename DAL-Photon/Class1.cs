@@ -8,6 +8,7 @@ namespace DAL_Photon
 {
     public class Class1
     {
-        //注释
+        //注释、、
+        //////////////ssssssssss
     }
 }
