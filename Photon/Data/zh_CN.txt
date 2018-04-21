@@ -93,6 +93,13 @@ Log Viewer=日志查看器
 Inbound=入站
 Outbound=出站
 
+# Landing
+
+Landing=登陆
+Username=用户名
+Password=密码
+Registered=注册
+
 # QRCode Form
 
 QRCode and URL=二维码与 URL

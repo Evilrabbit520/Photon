@@ -404,6 +404,7 @@ namespace Photon.View
 
         private void DuplicateBtn_Click(object sender, EventArgs e)
         {
+            
             if (!SaveOldSelectedServer())
             {
                 return;
@@ -467,5 +468,6 @@ namespace Photon.View
         {
 
         }
+
     }
 }
