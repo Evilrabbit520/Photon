@@ -7,29 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Photon.Controller;
 
 namespace Photon.View
 {
     public partial class Landing : Form
     {
-        public Landing(object user)
+        public Landing()
         {
             InitializeComponent();
         }
-
-        public Landing()
-        {
-        }
-
-        private void UpdateTexts()
-        {
-            button1.Text = I18N.GetString("Landing");
-        }
-
-            private void button1_Click(object sender, EventArgs e)
-            {
-
-            }
     }
 }
