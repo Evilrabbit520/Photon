@@ -27,6 +27,10 @@ namespace Photon.View
             this.Text = I18N.GetString("QRCode and URL");
         }
 
+        public QRCodeForm()
+        {
+        }
+
         private void GenQR(string ssconfig)
         {
             string qrText = ssconfig;
