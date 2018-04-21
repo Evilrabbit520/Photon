@@ -12,7 +12,8 @@
     <AssemblyName>Photon</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>Photon.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
     <ApplicationIcon>PhotonLogo.ico</ApplicationIcon>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <FileUpgradeFlags>

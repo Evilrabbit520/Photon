@@ -28,13 +28,10 @@ namespace Photon.View
             // a dirty hack
             this.ServersListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PerformLayout();
-
             UpdateTexts();
             this.Icon = Icon.FromHandle(Resources.ssw128.GetHicon());
-
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
-
             LoadCurrentConfiguration();
         }
 
