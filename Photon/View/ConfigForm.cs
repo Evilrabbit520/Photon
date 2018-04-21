@@ -474,6 +474,7 @@ namespace Photon.View
         {
             Landing form1 = new Landing();
             form1.Show();
+
         }
     }
 }
