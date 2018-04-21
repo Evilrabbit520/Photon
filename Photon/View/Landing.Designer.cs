@@ -59,7 +59,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Landing";
-            this.Text = "Landing1";
+            this.Text = "Landing";
             this.ResumeLayout(false);
             this.PerformLayout();
 
