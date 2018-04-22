@@ -305,12 +305,17 @@
     <None Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="logo.png" />
     <Content Include="PhotonLogo.ico" />
     <None Include="Resources\Photon2.png" />
     <None Include="Resources\Photon1.png" />
     <None Include="Resources\Photon.png" />
+    <Content Include="PhotonLogo.png" />
+    <None Include="Resources\logo.png" />
     <Content Include="Resources\PhotonLogo.ico" />
     <None Include="Resources\ssw128.png" />
+    <None Include="Resources\PhotonLogo.png" />
+    <None Include="Resources\PhotonLogo1.ico" />
     <Content Include="Resources\ssIn24.png" />
     <Content Include="Resources\ssOut24.png" />
   </ItemGroup>

@@ -196,7 +196,7 @@
             this.ServersListBox.Margin = new System.Windows.Forms.Padding(0);
             this.ServersListBox.Name = "ServersListBox";
             this.ServersListBox.Size = new System.Drawing.Size(211, 315);
-            this.ServersListBox.TabIndex = 9;
+            this.ServersListBox.TabIndex = 0;
             this.ServersListBox.SelectedIndexChanged += new System.EventHandler(this.ServersListBox_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
@@ -286,7 +286,7 @@
             this.OKBtn.Location = new System.Drawing.Point(352, 390);
             this.OKBtn.Name = "OKBtn";
             this.OKBtn.Size = new System.Drawing.Size(75, 23);
-            this.OKBtn.TabIndex = 17;
+            this.OKBtn.TabIndex = 6;
             this.OKBtn.Text = "OK";
             this.OKBtn.UseVisualStyleBackColor = false;
             this.OKBtn.Click += new System.EventHandler(this.OKBtn_Click);
@@ -297,7 +297,7 @@
             this.CenBtn.Location = new System.Drawing.Point(442, 390);
             this.CenBtn.Name = "CenBtn";
             this.CenBtn.Size = new System.Drawing.Size(75, 23);
-            this.CenBtn.TabIndex = 18;
+            this.CenBtn.TabIndex = 7;
             this.CenBtn.Text = "Cancel";
             this.CenBtn.UseVisualStyleBackColor = false;
             this.CenBtn.Click += new System.EventHandler(this.CenBtn_Click);
@@ -308,7 +308,7 @@
             this.MoveUpBtn.Location = new System.Drawing.Point(12, 390);
             this.MoveUpBtn.Name = "MoveUpBtn";
             this.MoveUpBtn.Size = new System.Drawing.Size(75, 23);
-            this.MoveUpBtn.TabIndex = 19;
+            this.MoveUpBtn.TabIndex = 3;
             this.MoveUpBtn.Text = "Move &Up";
             this.MoveUpBtn.UseVisualStyleBackColor = false;
             this.MoveUpBtn.Click += new System.EventHandler(this.MoveUpBtn_Click);
@@ -319,7 +319,7 @@
             this.MoveDownBtn.Location = new System.Drawing.Point(148, 390);
             this.MoveDownBtn.Name = "MoveDownBtn";
             this.MoveDownBtn.Size = new System.Drawing.Size(75, 23);
-            this.MoveDownBtn.TabIndex = 20;
+            this.MoveDownBtn.TabIndex = 5;
             this.MoveDownBtn.Text = "Move &Down";
             this.MoveDownBtn.UseVisualStyleBackColor = false;
             this.MoveDownBtn.Click += new System.EventHandler(this.MoveDownBtn_Click);
@@ -330,7 +330,7 @@
             this.DuplicateBtn.Location = new System.Drawing.Point(12, 361);
             this.DuplicateBtn.Name = "DuplicateBtn";
             this.DuplicateBtn.Size = new System.Drawing.Size(75, 23);
-            this.DuplicateBtn.TabIndex = 21;
+            this.DuplicateBtn.TabIndex = 2;
             this.DuplicateBtn.Text = "&Duplicate";
             this.DuplicateBtn.UseVisualStyleBackColor = false;
             this.DuplicateBtn.Click += new System.EventHandler(this.DuplicateBtn_Click);
@@ -341,7 +341,7 @@
             this.AddBtn.Location = new System.Drawing.Point(12, 332);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(75, 23);
-            this.AddBtn.TabIndex = 22;
+            this.AddBtn.TabIndex = 1;
             this.AddBtn.Text = "&Add";
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
@@ -352,7 +352,7 @@
             this.DeleteBtn.Location = new System.Drawing.Point(148, 332);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
-            this.DeleteBtn.TabIndex = 23;
+            this.DeleteBtn.TabIndex = 4;
             this.DeleteBtn.Text = "&Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
@@ -384,7 +384,7 @@
             this.tableLayoutPanel1.Controls.Add(this.PluginLabel, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.PluginTextBox, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(235, 13);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(232, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -399,7 +399,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 352);
-            this.tableLayoutPanel1.TabIndex = 24;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ConfusedBox
             // 
@@ -415,7 +415,7 @@
             this.ConfusedBox.Location = new System.Drawing.Point(117, 123);
             this.ConfusedBox.Name = "ConfusedBox";
             this.ConfusedBox.Size = new System.Drawing.Size(165, 20);
-            this.ConfusedBox.TabIndex = 27;
+            this.ConfusedBox.TabIndex = 3;
             // 
             // LabConP
             // 
@@ -492,7 +492,7 @@
             this.ProxyPortTextBox.MaxLength = 10;
             this.ProxyPortTextBox.Name = "ProxyPortTextBox";
             this.ProxyPortTextBox.Size = new System.Drawing.Size(113, 21);
-            this.ProxyPortTextBox.TabIndex = 8;
+            this.ProxyPortTextBox.TabIndex = 9;
             this.ProxyPortTextBox.WordWrap = false;
             // 
             // TimeoutTextBox
@@ -502,7 +502,7 @@
             this.TimeoutTextBox.MaxLength = 5;
             this.TimeoutTextBox.Name = "TimeoutTextBox";
             this.TimeoutTextBox.Size = new System.Drawing.Size(165, 21);
-            this.TimeoutTextBox.TabIndex = 7;
+            this.TimeoutTextBox.TabIndex = 8;
             // 
             // RemarksTextBox
             // 
@@ -511,7 +511,7 @@
             this.RemarksTextBox.MaxLength = 32;
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(165, 21);
-            this.RemarksTextBox.TabIndex = 6;
+            this.RemarksTextBox.TabIndex = 7;
             this.RemarksTextBox.WordWrap = false;
             // 
             // PluginOptionsTextBox
@@ -521,7 +521,7 @@
             this.PluginOptionsTextBox.MaxLength = 256;
             this.PluginOptionsTextBox.Name = "PluginOptionsTextBox";
             this.PluginOptionsTextBox.Size = new System.Drawing.Size(165, 21);
-            this.PluginOptionsTextBox.TabIndex = 5;
+            this.PluginOptionsTextBox.TabIndex = 6;
             this.PluginOptionsTextBox.WordWrap = false;
             // 
             // PluginTextBox
@@ -531,7 +531,7 @@
             this.PluginTextBox.MaxLength = 256;
             this.PluginTextBox.Name = "PluginTextBox";
             this.PluginTextBox.Size = new System.Drawing.Size(165, 21);
-            this.PluginTextBox.TabIndex = 4;
+            this.PluginTextBox.TabIndex = 5;
             this.PluginTextBox.WordWrap = false;
             this.PluginTextBox.TextChanged += new System.EventHandler(this.PluginTextBox_TextChanged);
             // 
@@ -542,7 +542,7 @@
             this.textBox2.MaxLength = 256;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(165, 21);
-            this.textBox2.TabIndex = 27;
+            this.textBox2.TabIndex = 4;
             this.textBox2.WordWrap = false;
             // 
             // LabTime
