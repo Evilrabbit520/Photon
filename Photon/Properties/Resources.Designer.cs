@@ -81,6 +81,16 @@ namespace Photon.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
         internal static byte[] mgwz_dll {
@@ -116,6 +126,26 @@ namespace Photon.Properties {
         internal static System.Drawing.Bitmap Photon2 {
             get {
                 object obj = ResourceManager.GetObject("Photon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PhotonLogo {
+            get {
+                object obj = ResourceManager.GetObject("PhotonLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PhotonLogo1 {
+            get {
+                object obj = ResourceManager.GetObject("PhotonLogo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
