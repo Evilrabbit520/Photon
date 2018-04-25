@@ -50,6 +50,7 @@
             this.Btnlan.TabIndex = 0;
             this.Btnlan.Text = "登陆";
             this.Btnlan.UseVisualStyleBackColor = true;
+            this.Btnlan.Click += new System.EventHandler(this.landingevent);
             // 
             // Textboxuser
             // 
