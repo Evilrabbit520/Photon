@@ -45,7 +45,6 @@ namespace Photon.View
                 DataTable dt = new DataTable();
                 sqlDa.Fill(dt);
                 int count = dt.Rows.Count;
-                dataGridView1.DataSource = dt;
                 if (count > 0)//如果信息>0则说明匹配成功
                 {
                     MessageBox.Show("信息验证成功" + count.ToString());
