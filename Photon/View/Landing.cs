@@ -40,7 +40,8 @@ namespace Photon.View
             else//用户名或密码不为空
             {
                 //到数据库中验证
-                string selectSql = "select * from Photon_Users where Account=" + username+"and UserPwd=" + password;
+                string selectSql = "select * from Photon_Users where Account=" + username+"and UserPwd="+ "'"+password+"'";
+
                 SqlDataAdapter sqlDa = new SqlDataAdapter(selectSql, sqlConnection);
                 DataTable dt = new DataTable();
                 sqlDa.Fill(dt);
