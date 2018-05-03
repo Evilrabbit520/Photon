@@ -41,17 +41,22 @@ namespace Photon.View
             {
                 //到数据库中验证
                 string selectSql = "select * from Photon_Users where Account=" + username+"and UserPwd=" + password;
-                SqlDataAdapter sqlDa = new SqlDataAdapter(selectSql, sqlConnection);
-                DataTable dt = new DataTable();
-                sqlDa.Fill(dt);
-                int count = dt.Rows.Count;
-                if (count > 0)//如果信息>0则说明匹配成功
+                //SqlDataAdapter sqlDa = new SqlDataAdapter(selectSql, sqlConnection);
+                //DataTable dt = new DataTable();
+                //sqlDa.Fill(dt);
+                //int count = dt.Rows.Count;
+                SqlCommand My_com = sqlConnection.CreateCommand();
+                My_com.CommandText = selectSql;
+                SqlDataReader My_Reader = My_com.ExecuteReader();
+                SqlDataReader temdr = My_Reader;
+                bool ifcom = temdr.Read();
+                if (ifcom)//如果信息>0则说明匹配成功
                 {
-                    MessageBox.Show("信息验证成功" + count.ToString());
+                    MessageBox.Show("信息验证成功");
                 }
                 else
                 {
-                    MessageBox.Show("用户名或密码错误"+count.ToString());
+                    MessageBox.Show("用户名或密码错误");
                 }
 
             }
