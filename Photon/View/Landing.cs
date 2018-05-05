@@ -21,6 +21,7 @@ namespace Photon.View
         public Landing()
         {
             InitializeComponent();
+            Icon = Icon.FromHandle(Resources.ssw128.GetHicon());
         }
 
         private void landingevent(object sender, EventArgs e)
@@ -35,7 +36,8 @@ namespace Photon.View
 
             if (username.Equals("") || password.Equals(""))//用户名或密码为空
             {
-                MessageBox.Show("用户名或密码不能为空");
+                MessageBox.Show(I18N.GetString("Please enter your account or password.")); 
+                //I18N.GetString("用户名或密码不能为空");
             }
             else//用户名或密码不为空
             {
@@ -48,15 +50,25 @@ namespace Photon.View
                 int count = dt.Rows.Count;
                 if (count > 0)//如果信息>0则说明匹配成功
                 {
-                    MessageBox.Show("信息验证成功" + count.ToString());
+                    MessageBox.Show(I18N.GetString("登陆成功直接跳转主窗体") + count.ToString());      //Delete #53
                 }
                 else
                 {
-                    MessageBox.Show("用户名或密码错误"+count.ToString());
+                    MessageBox.Show(I18N.GetString("Incorrect username or password.") + count.ToString());
                 }
 
             }
          
+        }
+
+        private void LinkLabows_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://photon.idigitaltechnology.com");
+        }
+
+        private void LinkLabUA_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://photon.idigitaltechnology.com/Userknowledge/Userknowledge.html");
         }
     }
 }
