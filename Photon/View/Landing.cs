@@ -17,6 +17,7 @@ namespace Photon.View
 {
     public partial class Landing : Form
     {
+        public static string staticusernanme = "";
 
         public Landing()
         {
@@ -40,7 +41,7 @@ namespace Photon.View
             else//用户名或密码不为空
             {
                 //到数据库中验证
-                string selectSql = "select * from Photon_Users where Account=" + username+"and UserPwd=" + password;
+                string selectSql = "select * from Photon_Users where Account=" + username+"and UserPwd=" + "'"+password+"'";
                 //SqlDataAdapter sqlDa = new SqlDataAdapter(selectSql, sqlConnection);
                 //DataTable dt = new DataTable();
                 //sqlDa.Fill(dt);
@@ -53,6 +54,7 @@ namespace Photon.View
                 if (ifcom)//如果信息>0则说明匹配成功
                 {
                     MessageBox.Show("信息验证成功");
+                    staticusernanme = username;
                 }
                 else
                 {
