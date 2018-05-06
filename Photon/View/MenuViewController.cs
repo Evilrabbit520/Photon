@@ -278,11 +278,13 @@ namespace Photon.View
                     this.onlinePACItem = CreateMenuItem("Online PAC", new EventHandler(this.OnlinePACItem_Click)),
                     new MenuItem("-"),
                     this.editLocalPACItem = CreateMenuItem("Edit Local PAC File...", new EventHandler(this.EditPACFileItem_Click)),
-                    this.updateFromGFWListItem = CreateMenuItem("Update Local PAC from GFWList", new EventHandler(this.UpdatePACFromGFWListItem_Click)),
-                    this.editGFWUserRuleItem = CreateMenuItem("Edit User Rule for GFWList...", new EventHandler(this.EditUserRuleFileForGFWListItem_Click)),
+                    //this.updateFromGFWListItem = CreateMenuItem("Update Local PAC from GFWList", new EventHandler(this.UpdatePACFromGFWListItem_Click)),
+                    //this.editGFWUserRuleItem = CreateMenuItem("Edit User Rule for GFWList...", new EventHandler(this.EditUserRuleFileForGFWListItem_Click)),
                     this.secureLocalPacUrlToggleItem = CreateMenuItem("Secure Local PAC", new EventHandler(this.SecureLocalPacUrlToggleItem_Click)),
                     CreateMenuItem("Copy Local PAC URL", new EventHandler(this.CopyLocalPacUrlItem_Click)),
                     this.editOnlinePACItem = CreateMenuItem("Edit Online PAC URL...", new EventHandler(this.UpdateOnlinePACURLItem_Click)),
+                    new MenuItem("-"),
+                    CreateMenuItem("Download the latest PAC file",new EventHandler(this.PACsite_Click)),
                 }),
                 this.proxyItem = CreateMenuItem("Forward Proxy...", new EventHandler(this.proxyItem_Click)),
                 new MenuItem("-"),
@@ -582,12 +584,17 @@ namespace Photon.View
         //关于页面地址引用
         private void AboutItem_Click(object sender, EventArgs e)
         {
-            Process.Start("http://about.photon.idigitaltechnology.com/");
+            Process.Start("https://photon.idigitaltechnology.com#gy");
         }
         //Photon官网
         private void Website_Click(object sender, EventArgs e)
         {
             Process.Start("http://photon.idigitaltechnology.com/ ");
+        }
+        //Download the latest PAC file
+        private void PACsite_Click(object sender, EventArgs e)
+        {
+            Process.Start("");
         }
         private void notifyIcon1_Click(object sender, MouseEventArgs e)
         {
@@ -842,15 +849,15 @@ namespace Photon.View
             if (this.localPACItem.Checked)
             {
                 this.editLocalPACItem.Enabled = true;
-                this.updateFromGFWListItem.Enabled = true;
-                this.editGFWUserRuleItem.Enabled = true;
+                //this.updateFromGFWListItem.Enabled = true;
+                //this.editGFWUserRuleItem.Enabled = true;
                 this.editOnlinePACItem.Enabled = false;
             }
             else
             {
                 this.editLocalPACItem.Enabled = false;
-                this.updateFromGFWListItem.Enabled = false;
-                this.editGFWUserRuleItem.Enabled = false;
+                //this.updateFromGFWListItem.Enabled = false;
+                //this.editGFWUserRuleItem.Enabled = false;
                 this.editOnlinePACItem.Enabled = true;
             }
         }
