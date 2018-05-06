@@ -203,6 +203,12 @@
     <Compile Include="View\CalculationControl.Designer.cs">
       <DependentUpon>CalculationControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CPUID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CPUID.Designer.cs">
+      <DependentUpon>CPUID.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Landing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CalculationControl.resx">
       <DependentUpon>CalculationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CPUID.resx">
+      <DependentUpon>CPUID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Landing.resx">
       <DependentUpon>Landing.cs</DependentUpon>

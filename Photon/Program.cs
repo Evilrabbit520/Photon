@@ -71,7 +71,7 @@ namespace Photon
 #if DEBUG
                 Logging.OpenLogFile();
 
-                // truncate privoxy log file while debugging
+                //truncate privoxy log file while debugging
                 string privoxyLogFilename = Utils.GetTempPath("privoxy.log");
                 if (File.Exists(privoxyLogFilename))
                     using (new FileStream(privoxyLogFilename, FileMode.Truncate)) { }
@@ -82,7 +82,7 @@ namespace Photon
                 MenuController = new MenuViewController(MainController);
                 HotKeys.Init(MainController);
                 MainController.Start();
-                Application.Run();
+                Application.Run();     //Main window
             }
         }
 

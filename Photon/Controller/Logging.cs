@@ -20,7 +20,7 @@ namespace Photon.Controller
         {
             try
             {
-                LogFilePath = Utils.GetTempPath("shadowsocks.log");
+                LogFilePath = Utils.GetTempPath("Photon.log");
 
                 _fs = new FileStream(LogFilePath, FileMode.Append);
                 _sw = new StreamWriterWithTimestamp(_fs);

@@ -37,6 +37,10 @@ namespace Photon.View
             label2.Text = Landing.staticusernanme;
         }
 
+        public ConfigForm()
+        {
+        }
+
         private void UpdateTexts()
         {
             AddBtn.Text = I18N.GetString("&Add");
@@ -473,7 +477,7 @@ namespace Photon.View
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Landing form1 = new Landing();
+            CPUID form1 = new CPUID();
             form1.Show();
 
         }
