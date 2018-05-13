@@ -9,8 +9,10 @@ using Microsoft.Win32;
 using Photon.Controller;
 using Photon.Model;
 using Photon.Properties;
+using System.Data;
 using System.Data.SqlClient;
 using MODEL_Photon;
+using System.Management;
 
 namespace Photon.View
 {
@@ -34,7 +36,7 @@ namespace Photon.View
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
             LoadCurrentConfiguration();
-            //label2.Text = Landing.staticusernanme;
+            CpuID_verification();
         }
 
         public ConfigForm()
@@ -480,6 +482,56 @@ namespace Photon.View
             CPUID form1 = new CPUID();
             form1.Show();
 
+        }
+
+        private void CpuID_verification()
+        {
+            String connsql = "Data Source=119.27.175.120;Initial Catalog = Digital Technology; Persist Security Info = True; User ID = sa;Password=dtserver"; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
+            SqlConnection sqlConnection = new SqlConnection(connsql);
+            sqlConnection.Open();
+            //获取文本框中的值
+            string cpuid = GetCpuID();
+            //到数据库中验证
+            string selectSql = "select * from Photon_Users where CPUID=" + "'" + cpuid + "'";
+            SqlCommand My_com = sqlConnection.CreateCommand();
+            My_com.CommandText = selectSql;
+            SqlDataReader My_Reader = My_com.ExecuteReader();
+            bool ifcom = My_Reader.Read();
+            if(ifcom)
+            {
+                MessageBox.Show("登陆成功");
+            }
+            else
+            {
+                My_Reader.Close();
+                SqlCommand cmd = new SqlCommand("insert into Photon_Users (CPUID) values('"+cpuid+"')", sqlConnection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("注册成功");
+            }
+
+            sqlConnection.Close();
+
+        }
+
+        private string GetCpuID()
+        {
+            try
+            {
+                string cpuInfo = "";//cpu序列号 
+                ManagementClass mc = new ManagementClass("Win32_Processor");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    cpuInfo = mo.Properties["ProcessorId"].Value.ToString();
+                }
+                moc = null;
+                mc = null;
+                return cpuInfo;
+            }
+            catch
+            {
+                return "unknow";
+            }
         }
     }
 }
