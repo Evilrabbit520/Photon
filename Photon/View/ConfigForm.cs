@@ -36,7 +36,7 @@ namespace Photon.View
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
             LoadCurrentConfiguration();
-            CpuID_verification();
+            label2.Text = Landing.staticusernanme;
         }
 
         public ConfigForm()
