@@ -36,7 +36,7 @@ namespace Photon.View
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
             LoadCurrentConfiguration();
-            label2.Text = Landing.staticusernanme;
+            //label2.Text = Landing.staticusernanme;
         }
 
         public ConfigForm()

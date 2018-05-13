@@ -52,23 +52,23 @@ namespace Photon.View
                 SqlDataReader My_Reader = My_com.ExecuteReader();
                 SqlDataReader temdr = My_Reader;
                 bool ifcom = temdr.Read();
-                if (ifcom)//如果信息>0则说明匹配成功
-                {
-<<<<<<<<< Temporary merge branch 1
-                    MessageBox.Show("信息验证成功");
-                    staticusernanme = username;
-                }
-                else
-                {
-                    MessageBox.Show("用户名或密码错误");
-=========
-                    MessageBox.Show(I18N.GetString("登陆成功直接跳转主窗体") + count.ToString());      //Delete #53
-                }
-                else
-                {
-                    MessageBox.Show(I18N.GetString("Incorrect username or password.") + count.ToString());
->>>>>>>>> Temporary merge branch 2
-                }
+                //if (ifcom)//如果信息>0则说明匹配成功
+                //{
+                //    Temporary merge branch 1
+                //    MessageBox.Show("信息验证成功");
+                //    staticusernanme = username;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("用户名或密码错误");
+                //    MessageBox.Show(I18N.GetString("登陆成功直接跳转主窗体") + count.ToString());      //Delete #53
+                //}
+                //else
+                //{
+                //    MessageBox.Show(I18N.GetString("Incorrect username or password.") + count.ToString());
+
+                //    Temporary merge branch 2
+                //}
 
             }
          
