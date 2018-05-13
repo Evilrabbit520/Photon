@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
+using System.Data.SqlClient;
 
 namespace Photon.View
 {
@@ -45,10 +46,8 @@ namespace Photon.View
                     return "unknow";
                 }
             }
-            
-            TextCPUID.Text = GetCpuID();
-        }
 
+        }
         private void TextCPUID_TextChanged(object sender, EventArgs e)
         {
              //这里可以Delete了，没用了
