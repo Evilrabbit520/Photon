@@ -34,7 +34,6 @@ namespace Photon.View
             string username = Textboxuser.Text;
             string password = Textboxpass.Text;
 
-
             if (username.Equals("") || password.Equals(""))//用户名或密码为空
             {
                 MessageBox.Show(I18N.GetString("Please enter your account or password.")); 
