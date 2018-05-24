@@ -486,6 +486,7 @@ namespace Photon.View
 
         private void CpuID_verification()
         {
+
             String connsql = "Data Source=119.27.175.120;Initial Catalog = Digital Technology; Persist Security Info = True; User ID = sa;Password=dtserver"; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
             SqlConnection sqlConnection = new SqlConnection(connsql);
             sqlConnection.Open();
