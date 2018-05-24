@@ -36,7 +36,7 @@ namespace Photon.View
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
             LoadCurrentConfiguration();
-            //label2.Text = Landing.staticusernanme;
+            CpuID_verification();
         }
 
         public ConfigForm()
@@ -486,6 +486,7 @@ namespace Photon.View
 
         private void CpuID_verification()
         {
+
             String connsql = "Data Source=119.27.175.120;Initial Catalog = Digital Technology; Persist Security Info = True; User ID = sa;Password=dtserver"; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
             SqlConnection sqlConnection = new SqlConnection(connsql);
             sqlConnection.Open();
@@ -499,14 +500,14 @@ namespace Photon.View
             bool ifcom = My_Reader.Read();
             if(ifcom)
             {
-                MessageBox.Show("登陆成功");
+                MessageBox.Show(I18N.GetString("Landed successfully"));     //登陆成功
             }
             else
             {
                 My_Reader.Close();
                 SqlCommand cmd = new SqlCommand("insert into Photon_Users (CPUID) values('"+cpuid+"')", sqlConnection);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("注册成功");
+                MessageBox.Show(I18N.GetString("Registration success"));   //注册成功（新用户第一次登陆会往数据库记录一条CUPID）
             }
 
             sqlConnection.Close();

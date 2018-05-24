@@ -162,3 +162,5 @@ Register hotkey failed=注册热键失败
 Cannot parse hotkey: {0}=解析热键失败: {0}
 Timeout is invalid, it should not exceed {0}=超时无效，不应超过 {0}
 If you have not entered your gift certificate code, please contact your system administrator to obtain the gift certificate code.=您未输入的礼券码，请联系系统管理员获取礼券码。
+Registration success=注册成功
+Landed successfully=登陆成功
