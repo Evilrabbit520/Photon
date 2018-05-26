@@ -21,6 +21,7 @@ Update Local PAC from GFWList=从 GFWList 更新本地 PAC
 Edit User Rule for GFWList...=编辑 GFWList 的用户规则...
 Secure Local PAC=保护本地 PAC
 Copy Local PAC URL=复制本地 PAC 网址
+Download the latest PAC file=下载最新版本的PAC文件
 Share Server Config...=分享服务器配置...
 Scan QRCode from Screen...=扫描屏幕上的二维码...
 Import URL from Clipboard...=从剪贴板导入URL...
@@ -33,7 +34,7 @@ Check for Updates at Startup=启动时检查更新
 Check Pre-release Version=检查测试版更新
 Edit Hotkeys...=编辑快捷键...
 About...=关于...
-Photon web site...=光子网站...
+Photon web site...=Photon网站...
 Help=帮助
 Quit=退出
 Configure the photon server=配置Photon服务器
@@ -92,6 +93,15 @@ Change &Font=设置字体(&F)
 Log Viewer=日志查看器
 Inbound=入站
 Outbound=出站
+
+# Landing
+
+Landing=登陆
+Username=用户名
+Password=密码
+Registered=注册
+Please enter your account or password.=请输入账号或密码
+Incorrect username or password.=账号或密码错误
 
 # QRCode Form
 
@@ -152,3 +162,5 @@ Register hotkey failed=注册热键失败
 Cannot parse hotkey: {0}=解析热键失败: {0}
 Timeout is invalid, it should not exceed {0}=超时无效，不应超过 {0}
 If you have not entered your gift certificate code, please contact your system administrator to obtain the gift certificate code.=您未输入的礼券码，请联系系统管理员获取礼券码。
+Registration success=注册成功
+Landed successfully=登陆成功

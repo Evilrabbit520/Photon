@@ -9,13 +9,20 @@ using Microsoft.Win32;
 using Photon.Controller;
 using Photon.Model;
 using Photon.Properties;
+using System.Data;
 using System.Data.SqlClient;
 using MODEL_Photon;
+using System.Management;
+using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
+
 
 namespace Photon.View
 {
     public partial class ConfigForm : Form
     {
+        [DllImport("wininet")]
+        private extern static bool InternetGetConnectedState(out int connectionDescription, int reservedValue);
         private PhotonController controller;
         // this is a copy of configuration that we are working on
         private Configuration _modifiedConfiguration;
@@ -25,6 +32,7 @@ namespace Photon.View
         {
             this.Font = System.Drawing.SystemFonts.MessageBoxFont;
             InitializeComponent();
+            
             // a dirty hack
             this.ServersListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PerformLayout();
@@ -33,6 +41,11 @@ namespace Photon.View
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
             LoadCurrentConfiguration();
+            CpuID_verification();
+        }
+
+        public ConfigForm()
+        {
         }
 
         private void UpdateTexts()
@@ -45,10 +58,10 @@ namespace Photon.View
             PasswordLabel.Text = I18N.GetString("Password");
             ShowPasswdCheckBox.Text = I18N.GetString("Show Password");
             EncryptionLabel.Text = I18N.GetString("Encryption");
-            LabConf.Text = I18N.GetString("Confused");
-            LabConP.Text = I18N.GetString("Confusion par");
-            PluginLabel.Text = I18N.GetString("Plugin");
-            PluginOptionsLabel.Text = I18N.GetString("Plugin Options");
+            //LabConf.Text = I18N.GetString("Confused");
+            //LabConP.Text = I18N.GetString("Confusion par");
+            //PluginLabel.Text = I18N.GetString("Plugin");
+            //PluginOptionsLabel.Text = I18N.GetString("Plugin Options");
             ProxyPortLabel.Text = I18N.GetString("Proxy Port");
             RemarksLabel.Text = I18N.GetString("Remarks");
             TimeoutLabel.Text = I18N.GetString("Timeout(Sec)");
@@ -99,8 +112,8 @@ namespace Photon.View
                 }
                 server.password = PasswordTextBox.Text;
                 server.method = EncryptionSelect.Text;
-                server.plugin = PluginTextBox.Text;
-                server.plugin_opts = PluginOptionsTextBox.Text;
+                //server.plugin = PluginTextBox.Text;
+                //server.plugin_opts = PluginOptionsTextBox.Text;
                 server.remarks = RemarksTextBox.Text;
                 if (!int.TryParse(TimeoutTextBox.Text, out server.timeout))
                 {
@@ -134,8 +147,8 @@ namespace Photon.View
                 PasswordTextBox.Text = server.password;
                 ProxyPortTextBox.Text = _modifiedConfiguration.localPort.ToString();
                 EncryptionSelect.Text = server.method ?? "aes-256-cfb";
-                PluginTextBox.Text = server.plugin;
-                PluginOptionsTextBox.Text = server.plugin_opts;
+                //PluginTextBox.Text = server.plugin;
+                //PluginOptionsTextBox.Text = server.plugin_opts;
                 RemarksTextBox.Text = server.remarks;
                 TimeoutTextBox.Text = server.timeout.ToString();
             }
@@ -144,8 +157,8 @@ namespace Photon.View
                 Server server = _modifiedConfiguration.configs[ServersListBox.SelectedIndex];
 
                 string obfs_text = server.obfs ?? "plain";
-                ConfusedBox.Text = obfs_text;
-                PluginOptionsTextBox.Text = server.obfsparam;
+                //ConfusedBox.Text = obfs_text;
+                //PluginOptionsTextBox.Text = server.obfsparam;
                 RemarksTextBox.Text = server.remarks;
             }
 
@@ -404,6 +417,7 @@ namespace Photon.View
 
         private void DuplicateBtn_Click(object sender, EventArgs e)
         {
+            
             if (!SaveOldSelectedServer())
             {
                 return;
@@ -466,6 +480,106 @@ namespace Photon.View
         private void PluginTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CPUID form1 = new CPUID();
+            form1.Show();
+
+        }
+        private void CpuID_verification()
+        {
+            
+            try
+            {
+                if (PingIpOrDomainName("119.27.175.120"))
+                {
+                    MessageBox.Show("ss");
+                }
+                else
+                {
+                    //throw new Exception("无法连接到服务器，Photon将关闭");
+                    MessageBox.Show("无法连接到服务器，Photon将关闭");
+                    System.Environment.Exit(0);     //强制性结束所有Photon线程
+                }
+                String connsql = "Data Source=119.27.175.120;Initial Catalog = Digital Technology; Persist Security Info = True; User ID = sa;Password=dtserver"; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
+                SqlConnection sqlConnection = new SqlConnection(connsql);
+                sqlConnection.Open();
+                //获取文本框中的值
+                string cpuid = GetCpuID();
+                //到数据库中验证
+                string selectSql = "select * from Photon_Users where CPUID=" + "'" + cpuid + "'";
+                SqlCommand My_com = sqlConnection.CreateCommand();
+                My_com.CommandText = selectSql;
+                SqlDataReader My_Reader = My_com.ExecuteReader();
+                bool ifcom = My_Reader.Read();
+                if (ifcom)
+                {
+                    //MessageBox.Show(I18N.GetString("Landed successfully"));     //登陆成功
+                }
+                else
+                {
+                    My_Reader.Close();
+                    SqlCommand cmd = new SqlCommand("insert into Photon_Users (CPUID) values('" + cpuid + "')", sqlConnection);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(I18N.GetString("Registration success"));   //注册成功（新用户第一次登陆会往数据库记录一条CUPID）
+                }
+
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private string GetCpuID()
+        {
+            try
+            {
+                string cpuInfo = "";//cpu序列号 
+                ManagementClass mc = new ManagementClass("Win32_Processor");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    cpuInfo = mo.Properties["ProcessorId"].Value.ToString();
+                }
+                moc = null;
+                mc = null;
+                return cpuInfo;
+            }
+            catch
+            {
+                return "unknow";
+            }
+        }
+
+        public static bool PingIpOrDomainName(string strIpOrDName)
+        {
+            try
+            {
+                Ping objPingSender = new Ping();
+                PingOptions objPinOptions = new PingOptions();
+                objPinOptions.DontFragment = true;
+                string data = "";
+                byte[] buffer = Encoding.UTF8.GetBytes(data);
+                int intTimeout = 120;
+                PingReply objPinReply = objPingSender.Send(strIpOrDName, intTimeout, buffer, objPinOptions);
+                string strInfo = objPinReply.Status.ToString();
+                if (strInfo == "Success")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Photon for windows 1.1.0
-更新内容：
-1.我们在最新版本中修改了部分控件样式，使您能有一个良好的GUI（界面）体验.
-2.我们在最新版本中添加了自动注册功能，即在新设备中第一次使用软件会进行注册提示.（请注意：此更新内容需要您同意《服务条款及免责声明》中相关条款，若您继续使用则默认代表同意）
-3.解决了已知问题.
-
-详细更新内容请转至官网-最新版本 查看.
-
-联系Photon技术：
-QQ：3114181277
-WeChat：Aprilhare_wjn</value>
-  </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

@@ -15,7 +15,7 @@
     <StartupObject>
     </StartupObject>
     <ApplicationIcon>PhotonLogo.ico</ApplicationIcon>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -25,22 +25,21 @@
     </TargetFrameworkProfile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\evilr\Desktop\发布文件夹\</PublishUrl>
-    <Install>false</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <PublishUrl>C:\Users\Administrator\Desktop\WebSite\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <InstallUrl>https://api.github.com/repos/Evilrabbit520/Photon/releases/</InstallUrl>
     <UpdateUrl>http://www.jianingy.wang/</UpdateUrl>
     <TargetCulture>zh-Hans</TargetCulture>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.5.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -204,6 +203,18 @@
     <Compile Include="View\CalculationControl.Designer.cs">
       <DependentUpon>CalculationControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CPUID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CPUID.Designer.cs">
+      <DependentUpon>CPUID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Landing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Landing.Designer.cs">
+      <DependentUpon>Landing.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HotkeySettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CalculationControl.resx">
       <DependentUpon>CalculationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CPUID.resx">
+      <DependentUpon>CPUID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Landing.resx">
+      <DependentUpon>Landing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HotkeySettingsForm.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
@@ -296,12 +313,17 @@
     <None Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="logo.png" />
     <Content Include="PhotonLogo.ico" />
     <None Include="Resources\Photon2.png" />
     <None Include="Resources\Photon1.png" />
     <None Include="Resources\Photon.png" />
+    <Content Include="PhotonLogo.png" />
+    <None Include="Resources\logo.png" />
     <Content Include="Resources\PhotonLogo.ico" />
     <None Include="Resources\ssw128.png" />
+    <None Include="Resources\PhotonLogo.png" />
+    <None Include="Resources\PhotonLogo1.ico" />
     <Content Include="Resources\ssIn24.png" />
     <Content Include="Resources\ssOut24.png" />
   </ItemGroup>
