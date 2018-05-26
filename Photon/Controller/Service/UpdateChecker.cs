@@ -22,7 +22,7 @@ namespace Photon.Controller
         public string LatestVersionLocalName;
         public event EventHandler CheckUpdateCompleted;
 
-        public const string Version = "1.0.5";    //固件版本号
+        public const string Version = "1.1.0";    //固件版本号
 
         private class CheckUpdateTimer : System.Timers.Timer
         {
