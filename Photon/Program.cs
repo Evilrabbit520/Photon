@@ -9,6 +9,7 @@ using Photon.Controller.Hotkeys;
 using Photon.Util;
 using Photon.View;
 using Photon;
+//using System.Net.NetworkInformation;
 
 namespace Photon
 {
@@ -112,6 +113,7 @@ namespace Photon
                 Application.Exit();
             }
         }
+
 
         private static void SystemEvents_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
         {

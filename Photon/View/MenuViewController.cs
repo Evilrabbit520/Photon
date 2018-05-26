@@ -299,7 +299,7 @@ namespace Photon.View
                         CreateMenuItem("Check for Updates...", new EventHandler(this.checkUpdatesItem_Click)),
                         new MenuItem("-"),
                         this.autoCheckUpdatesToggleItem = CreateMenuItem("Check for Updates at Startup", new EventHandler(this.autoCheckUpdatesToggleItem_Click)),
-                        this.checkPreReleaseToggleItem = CreateMenuItem("Check Pre-release Version", new EventHandler(this.checkPreReleaseToggleItem_Click)),
+                        //this.checkPreReleaseToggleItem = CreateMenuItem("Check Pre-release Version", new EventHandler(this.checkPreReleaseToggleItem_Click)),     //检查测试版本更新（下线）
                     }),
                     CreateMenuItem("About...", new EventHandler(this.AboutItem_Click)),
                     CreateMenuItem("Photon web site...",new EventHandler(this.Website_Click)),
@@ -589,12 +589,12 @@ namespace Photon.View
         //Photon官网
         private void Website_Click(object sender, EventArgs e)
         {
-            Process.Start("http://photon.idigitaltechnology.com/ ");
+            Process.Start("https://photon.idigitaltechnology.com ");
         }
         //Download the latest PAC file
         private void PACsite_Click(object sender, EventArgs e)
         {
-            Process.Start("");
+            Process.Start("https://photon.idigitaltechnology.com/downloadpage/download.html#Pcj");
         }
         private void notifyIcon1_Click(object sender, MouseEventArgs e)
         {
@@ -867,7 +867,7 @@ namespace Photon.View
         {
             Configuration configuration = controller.GetConfigurationCopy();
             autoCheckUpdatesToggleItem.Checked = configuration.autoCheckUpdate;
-            checkPreReleaseToggleItem.Checked = configuration.checkPreRelease;
+            //checkPreReleaseToggleItem.Checked = configuration.checkPreRelease;    //检查测试版本更新串
         }
 
         private void autoCheckUpdatesToggleItem_Click(object sender, EventArgs e)

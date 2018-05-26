@@ -31,14 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
             this.ShowPasswdCheckBox = new System.Windows.Forms.CheckBox();
-            this.PluginOptionsLabel = new System.Windows.Forms.Label();
             this.RemarksLabel = new System.Windows.Forms.Label();
             this.IPLabel = new System.Windows.Forms.Label();
             this.ServerPortLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.EncryptionLabel = new System.Windows.Forms.Label();
             this.TimeoutLabel = new System.Windows.Forms.Label();
-            this.PluginLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ServersListBox = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,9 +53,6 @@
             this.AddBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ConfusedBox = new System.Windows.Forms.ComboBox();
-            this.LabConP = new System.Windows.Forms.Label();
-            this.LabConf = new System.Windows.Forms.Label();
             this.IPTextBox = new System.Windows.Forms.TextBox();
             this.ServerPortTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
@@ -65,9 +60,6 @@
             this.ProxyPortTextBox = new System.Windows.Forms.TextBox();
             this.TimeoutTextBox = new System.Windows.Forms.TextBox();
             this.RemarksTextBox = new System.Windows.Forms.TextBox();
-            this.PluginOptionsTextBox = new System.Windows.Forms.TextBox();
-            this.PluginTextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.LabTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel2.SuspendLayout();
@@ -90,21 +82,11 @@
             this.ShowPasswdCheckBox.Visible = false;
             this.ShowPasswdCheckBox.CheckedChanged += new System.EventHandler(this.ShowPasswdCheckBox_CheckedChanged);
             // 
-            // PluginOptionsLabel
-            // 
-            this.PluginOptionsLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.PluginOptionsLabel.AutoSize = true;
-            this.PluginOptionsLabel.Location = new System.Drawing.Point(22, 219);
-            this.PluginOptionsLabel.Name = "PluginOptionsLabel";
-            this.PluginOptionsLabel.Size = new System.Drawing.Size(89, 12);
-            this.PluginOptionsLabel.TabIndex = 15;
-            this.PluginOptionsLabel.Text = "Plugin Options";
-            // 
             // RemarksLabel
             // 
             this.RemarksLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.RemarksLabel.AutoSize = true;
-            this.RemarksLabel.Location = new System.Drawing.Point(64, 249);
+            this.RemarksLabel.Location = new System.Drawing.Point(64, 129);
             this.RemarksLabel.Name = "RemarksLabel";
             this.RemarksLabel.Size = new System.Drawing.Size(47, 12);
             this.RemarksLabel.TabIndex = 9;
@@ -155,23 +137,12 @@
             // 
             this.TimeoutLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TimeoutLabel.AutoSize = true;
-            this.TimeoutLabel.Location = new System.Drawing.Point(34, 279);
+            this.TimeoutLabel.Location = new System.Drawing.Point(34, 159);
             this.TimeoutLabel.Name = "TimeoutLabel";
             this.TimeoutLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TimeoutLabel.Size = new System.Drawing.Size(77, 12);
             this.TimeoutLabel.TabIndex = 10;
             this.TimeoutLabel.Text = "Timeout(Sec)";
-            // 
-            // PluginLabel
-            // 
-            this.PluginLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.PluginLabel.AutoSize = true;
-            this.PluginLabel.Location = new System.Drawing.Point(70, 189);
-            this.PluginLabel.Name = "PluginLabel";
-            this.PluginLabel.Size = new System.Drawing.Size(41, 12);
-            this.PluginLabel.TabIndex = 12;
-            this.PluginLabel.Text = "Plugin";
-            this.PluginLabel.Click += new System.EventHandler(this.PluginLabel_Click);
             // 
             // panel2
             // 
@@ -249,7 +220,7 @@
             // 
             this.ProxyPortLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ProxyPortLabel.AutoSize = true;
-            this.ProxyPortLabel.Location = new System.Drawing.Point(46, 320);
+            this.ProxyPortLabel.Location = new System.Drawing.Point(46, 206);
             this.ProxyPortLabel.Name = "ProxyPortLabel";
             this.ProxyPortLabel.Size = new System.Drawing.Size(65, 12);
             this.ProxyPortLabel.TabIndex = 3;
@@ -279,7 +250,7 @@
             // OKBtn
             // 
             this.OKBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.OKBtn.Location = new System.Drawing.Point(352, 390);
+            this.OKBtn.Location = new System.Drawing.Point(352, 332);
             this.OKBtn.Name = "OKBtn";
             this.OKBtn.Size = new System.Drawing.Size(75, 23);
             this.OKBtn.TabIndex = 6;
@@ -290,7 +261,7 @@
             // CenBtn
             // 
             this.CenBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.CenBtn.Location = new System.Drawing.Point(442, 390);
+            this.CenBtn.Location = new System.Drawing.Point(442, 332);
             this.CenBtn.Name = "CenBtn";
             this.CenBtn.Size = new System.Drawing.Size(75, 23);
             this.CenBtn.TabIndex = 7;
@@ -358,9 +329,6 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.Controls.Add(this.ConfusedBox, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.LabConP, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.LabConf, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.IPLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.IPTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ServerPortLabel, 0, 1);
@@ -369,20 +337,15 @@
             this.tableLayoutPanel1.Controls.Add(this.PasswordTextBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.EncryptionLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.EncryptionSelect, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ProxyPortLabel, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.ProxyPortTextBox, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.TimeoutLabel, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.TimeoutTextBox, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.RemarksLabel, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.RemarksTextBox, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.PluginOptionsLabel, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.PluginOptionsTextBox, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.PluginLabel, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.PluginTextBox, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ProxyPortLabel, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ProxyPortTextBox, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.TimeoutLabel, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.TimeoutTextBox, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.RemarksLabel, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.RemarksTextBox, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(232, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -390,48 +353,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 352);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 244);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // ConfusedBox
-            // 
-            this.ConfusedBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ConfusedBox.BackColor = System.Drawing.Color.White;
-            this.ConfusedBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ConfusedBox.FormattingEnabled = true;
-            this.ConfusedBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ConfusedBox.ItemHeight = 12;
-            this.ConfusedBox.Items.AddRange(new object[] {
-            "plain"});
-            this.ConfusedBox.Location = new System.Drawing.Point(117, 123);
-            this.ConfusedBox.Name = "ConfusedBox";
-            this.ConfusedBox.Size = new System.Drawing.Size(165, 20);
-            this.ConfusedBox.TabIndex = 3;
-            // 
-            // LabConP
-            // 
-            this.LabConP.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LabConP.AutoSize = true;
-            this.LabConP.Location = new System.Drawing.Point(28, 159);
-            this.LabConP.Name = "LabConP";
-            this.LabConP.Size = new System.Drawing.Size(83, 12);
-            this.LabConP.TabIndex = 30;
-            this.LabConP.Text = "Confusion par";
-            // 
-            // LabConf
-            // 
-            this.LabConf.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LabConf.AutoSize = true;
-            this.LabConf.Location = new System.Drawing.Point(58, 129);
-            this.LabConf.Name = "LabConf";
-            this.LabConf.Size = new System.Drawing.Size(53, 12);
-            this.LabConf.TabIndex = 29;
-            this.LabConf.Text = "Confused";
             // 
             // IPTextBox
             // 
@@ -484,7 +411,7 @@
             // ProxyPortTextBox
             // 
             this.ProxyPortTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ProxyPortTextBox.Location = new System.Drawing.Point(117, 315);
+            this.ProxyPortTextBox.Location = new System.Drawing.Point(117, 201);
             this.ProxyPortTextBox.MaxLength = 10;
             this.ProxyPortTextBox.Name = "ProxyPortTextBox";
             this.ProxyPortTextBox.Size = new System.Drawing.Size(113, 21);
@@ -494,7 +421,7 @@
             // TimeoutTextBox
             // 
             this.TimeoutTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TimeoutTextBox.Location = new System.Drawing.Point(117, 274);
+            this.TimeoutTextBox.Location = new System.Drawing.Point(117, 154);
             this.TimeoutTextBox.MaxLength = 5;
             this.TimeoutTextBox.Name = "TimeoutTextBox";
             this.TimeoutTextBox.Size = new System.Drawing.Size(165, 21);
@@ -503,43 +430,12 @@
             // RemarksTextBox
             // 
             this.RemarksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemarksTextBox.Location = new System.Drawing.Point(117, 244);
+            this.RemarksTextBox.Location = new System.Drawing.Point(117, 124);
             this.RemarksTextBox.MaxLength = 32;
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(165, 21);
             this.RemarksTextBox.TabIndex = 7;
             this.RemarksTextBox.WordWrap = false;
-            // 
-            // PluginOptionsTextBox
-            // 
-            this.PluginOptionsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PluginOptionsTextBox.Location = new System.Drawing.Point(117, 214);
-            this.PluginOptionsTextBox.MaxLength = 256;
-            this.PluginOptionsTextBox.Name = "PluginOptionsTextBox";
-            this.PluginOptionsTextBox.Size = new System.Drawing.Size(165, 21);
-            this.PluginOptionsTextBox.TabIndex = 6;
-            this.PluginOptionsTextBox.WordWrap = false;
-            // 
-            // PluginTextBox
-            // 
-            this.PluginTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.PluginTextBox.Location = new System.Drawing.Point(117, 184);
-            this.PluginTextBox.MaxLength = 256;
-            this.PluginTextBox.Name = "PluginTextBox";
-            this.PluginTextBox.Size = new System.Drawing.Size(165, 21);
-            this.PluginTextBox.TabIndex = 5;
-            this.PluginTextBox.WordWrap = false;
-            this.PluginTextBox.TextChanged += new System.EventHandler(this.PluginTextBox_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(117, 154);
-            this.textBox2.MaxLength = 256;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(165, 21);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.WordWrap = false;
             // 
             // LabTime
             // 
@@ -564,7 +460,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(891, 450);
+            this.ClientSize = new System.Drawing.Size(891, 443);
             this.Controls.Add(this.LabTime);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.DeleteBtn);
@@ -612,8 +508,6 @@
         private System.Windows.Forms.Label ProxyPortLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label TimeoutLabel;
-        private System.Windows.Forms.Label PluginOptionsLabel;
-        private System.Windows.Forms.Label PluginLabel;
         private System.Windows.Forms.CheckBox ShowPasswdCheckBox;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox UserHelpGroupBox;
@@ -629,17 +523,11 @@
         private System.Windows.Forms.TextBox ServerPortTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.ComboBox EncryptionSelect;
-        private System.Windows.Forms.TextBox PluginTextBox;
         private System.Windows.Forms.TextBox RemarksTextBox;
-        private System.Windows.Forms.TextBox PluginOptionsTextBox;
         private System.Windows.Forms.TextBox TimeoutTextBox;
         private System.Windows.Forms.TextBox ProxyPortTextBox;
         private System.Windows.Forms.Label LabTime;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label LabConP;
-        private System.Windows.Forms.Label LabConf;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox ConfusedBox;
     }
 }
 
