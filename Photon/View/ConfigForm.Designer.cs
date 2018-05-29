@@ -60,8 +60,16 @@
             this.ProxyPortTextBox = new System.Windows.Forms.TextBox();
             this.TimeoutTextBox = new System.Windows.Forms.TextBox();
             this.RemarksTextBox = new System.Windows.Forms.TextBox();
+            this.ProtocolLabel = new System.Windows.Forms.Label();
+            this.ProtocolBox = new System.Windows.Forms.ComboBox();
             this.LabTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ProtocolparamLabel = new System.Windows.Forms.Label();
+            this.ProtocolparamBox = new System.Windows.Forms.TextBox();
+            this.ConfusedLabel = new System.Windows.Forms.Label();
+            this.ConfusedBox = new System.Windows.Forms.ComboBox();
+            this.ConfusedparamLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.UserHelpGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -86,7 +94,7 @@
             // 
             this.RemarksLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.RemarksLabel.AutoSize = true;
-            this.RemarksLabel.Location = new System.Drawing.Point(64, 129);
+            this.RemarksLabel.Location = new System.Drawing.Point(64, 249);
             this.RemarksLabel.Name = "RemarksLabel";
             this.RemarksLabel.Size = new System.Drawing.Size(47, 12);
             this.RemarksLabel.TabIndex = 9;
@@ -137,7 +145,7 @@
             // 
             this.TimeoutLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TimeoutLabel.AutoSize = true;
-            this.TimeoutLabel.Location = new System.Drawing.Point(34, 159);
+            this.TimeoutLabel.Location = new System.Drawing.Point(34, 279);
             this.TimeoutLabel.Name = "TimeoutLabel";
             this.TimeoutLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TimeoutLabel.Size = new System.Drawing.Size(77, 12);
@@ -220,7 +228,7 @@
             // 
             this.ProxyPortLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ProxyPortLabel.AutoSize = true;
-            this.ProxyPortLabel.Location = new System.Drawing.Point(46, 206);
+            this.ProxyPortLabel.Location = new System.Drawing.Point(46, 329);
             this.ProxyPortLabel.Name = "ProxyPortLabel";
             this.ProxyPortLabel.Size = new System.Drawing.Size(65, 12);
             this.ProxyPortLabel.TabIndex = 3;
@@ -250,7 +258,7 @@
             // OKBtn
             // 
             this.OKBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.OKBtn.Location = new System.Drawing.Point(352, 332);
+            this.OKBtn.Location = new System.Drawing.Point(352, 390);
             this.OKBtn.Name = "OKBtn";
             this.OKBtn.Size = new System.Drawing.Size(75, 23);
             this.OKBtn.TabIndex = 6;
@@ -261,7 +269,7 @@
             // CenBtn
             // 
             this.CenBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.CenBtn.Location = new System.Drawing.Point(442, 332);
+            this.CenBtn.Location = new System.Drawing.Point(442, 390);
             this.CenBtn.Name = "CenBtn";
             this.CenBtn.Size = new System.Drawing.Size(75, 23);
             this.CenBtn.TabIndex = 7;
@@ -337,15 +345,23 @@
             this.tableLayoutPanel1.Controls.Add(this.PasswordTextBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.EncryptionLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.EncryptionSelect, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ProxyPortLabel, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.ProxyPortTextBox, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.TimeoutLabel, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.TimeoutTextBox, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.RemarksLabel, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.RemarksTextBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ProxyPortLabel, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.ProxyPortTextBox, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.TimeoutLabel, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.TimeoutTextBox, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.RemarksLabel, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.RemarksTextBox, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.ProtocolLabel, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ProtocolBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ProtocolparamLabel, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ProtocolparamBox, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ConfusedLabel, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ConfusedBox, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ConfusedparamLabel, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(232, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -353,11 +369,11 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 244);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 371);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // IPTextBox
@@ -411,7 +427,7 @@
             // ProxyPortTextBox
             // 
             this.ProxyPortTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ProxyPortTextBox.Location = new System.Drawing.Point(117, 201);
+            this.ProxyPortTextBox.Location = new System.Drawing.Point(117, 325);
             this.ProxyPortTextBox.MaxLength = 10;
             this.ProxyPortTextBox.Name = "ProxyPortTextBox";
             this.ProxyPortTextBox.Size = new System.Drawing.Size(113, 21);
@@ -421,7 +437,7 @@
             // TimeoutTextBox
             // 
             this.TimeoutTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TimeoutTextBox.Location = new System.Drawing.Point(117, 154);
+            this.TimeoutTextBox.Location = new System.Drawing.Point(117, 274);
             this.TimeoutTextBox.MaxLength = 5;
             this.TimeoutTextBox.Name = "TimeoutTextBox";
             this.TimeoutTextBox.Size = new System.Drawing.Size(165, 21);
@@ -430,12 +446,45 @@
             // RemarksTextBox
             // 
             this.RemarksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemarksTextBox.Location = new System.Drawing.Point(117, 124);
+            this.RemarksTextBox.Location = new System.Drawing.Point(117, 244);
             this.RemarksTextBox.MaxLength = 32;
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(165, 21);
             this.RemarksTextBox.TabIndex = 7;
             this.RemarksTextBox.WordWrap = false;
+            // 
+            // ProtocolLabel
+            // 
+            this.ProtocolLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ProtocolLabel.AutoSize = true;
+            this.ProtocolLabel.Location = new System.Drawing.Point(58, 129);
+            this.ProtocolLabel.Name = "ProtocolLabel";
+            this.ProtocolLabel.Size = new System.Drawing.Size(53, 12);
+            this.ProtocolLabel.TabIndex = 27;
+            this.ProtocolLabel.Text = "Protocol";
+            // 
+            // ProtocolBox
+            // 
+            this.ProtocolBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProtocolBox.BackColor = System.Drawing.Color.White;
+            this.ProtocolBox.FormattingEnabled = true;
+            this.ProtocolBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ProtocolBox.ItemHeight = 12;
+            this.ProtocolBox.Items.AddRange(new object[] {
+            "origin",
+            "verify_deflate",
+            "auth_sha1_v4",
+            "auth_aes128_md5",
+            "auth_aes128_sha1",
+            "auth_chain_a",
+            "auth_chain_b",
+            "auth_chain_c",
+            "auth_chain_d"});
+            this.ProtocolBox.Location = new System.Drawing.Point(117, 123);
+            this.ProtocolBox.Name = "ProtocolBox";
+            this.ProtocolBox.Size = new System.Drawing.Size(165, 20);
+            this.ProtocolBox.TabIndex = 3;
             // 
             // LabTime
             // 
@@ -454,6 +503,78 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // ProtocolparamLabel
+            // 
+            this.ProtocolparamLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ProtocolparamLabel.AutoSize = true;
+            this.ProtocolparamLabel.Location = new System.Drawing.Point(22, 159);
+            this.ProtocolparamLabel.Name = "ProtocolparamLabel";
+            this.ProtocolparamLabel.Size = new System.Drawing.Size(89, 12);
+            this.ProtocolparamLabel.TabIndex = 27;
+            this.ProtocolparamLabel.Text = "Protocol param";
+            // 
+            // ProtocolparamBox
+            // 
+            this.ProtocolparamBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProtocolparamBox.Location = new System.Drawing.Point(117, 154);
+            this.ProtocolparamBox.MaxLength = 256;
+            this.ProtocolparamBox.Name = "ProtocolparamBox";
+            this.ProtocolparamBox.Size = new System.Drawing.Size(165, 21);
+            this.ProtocolparamBox.TabIndex = 2;
+            this.ProtocolparamBox.UseSystemPasswordChar = true;
+            this.ProtocolparamBox.WordWrap = false;
+            // 
+            // ConfusedLabel
+            // 
+            this.ConfusedLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ConfusedLabel.AutoSize = true;
+            this.ConfusedLabel.Location = new System.Drawing.Point(58, 189);
+            this.ConfusedLabel.Name = "ConfusedLabel";
+            this.ConfusedLabel.Size = new System.Drawing.Size(53, 12);
+            this.ConfusedLabel.TabIndex = 27;
+            this.ConfusedLabel.Text = "Confused";
+            // 
+            // ConfusedBox
+            // 
+            this.ConfusedBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ConfusedBox.BackColor = System.Drawing.Color.White;
+            this.ConfusedBox.FormattingEnabled = true;
+            this.ConfusedBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ConfusedBox.ItemHeight = 12;
+            this.ConfusedBox.Items.AddRange(new object[] {
+            "plain",
+            "http_simple",
+            "http_post",
+            "random_head",
+            "tls1.2_ticket_auth",
+            "tls1.2_ticket_fastauth"});
+            this.ConfusedBox.Location = new System.Drawing.Point(117, 183);
+            this.ConfusedBox.Name = "ConfusedBox";
+            this.ConfusedBox.Size = new System.Drawing.Size(165, 20);
+            this.ConfusedBox.TabIndex = 3;
+            // 
+            // ConfusedparamLabel
+            // 
+            this.ConfusedparamLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ConfusedparamLabel.AutoSize = true;
+            this.ConfusedparamLabel.Location = new System.Drawing.Point(22, 219);
+            this.ConfusedparamLabel.Name = "ConfusedparamLabel";
+            this.ConfusedparamLabel.Size = new System.Drawing.Size(89, 12);
+            this.ConfusedparamLabel.TabIndex = 27;
+            this.ConfusedparamLabel.Text = "Confused param";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(117, 214);
+            this.textBox1.MaxLength = 256;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 21);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.UseSystemPasswordChar = true;
+            this.textBox1.WordWrap = false;
             // 
             // ConfigForm
             // 
@@ -528,6 +649,14 @@
         private System.Windows.Forms.TextBox ProxyPortTextBox;
         private System.Windows.Forms.Label LabTime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label ProtocolLabel;
+        private System.Windows.Forms.ComboBox ProtocolBox;
+        private System.Windows.Forms.Label ProtocolparamLabel;
+        private System.Windows.Forms.TextBox ProtocolparamBox;
+        private System.Windows.Forms.Label ConfusedLabel;
+        private System.Windows.Forms.ComboBox ConfusedBox;
+        private System.Windows.Forms.Label ConfusedparamLabel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

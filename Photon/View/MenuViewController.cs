@@ -186,7 +186,7 @@ namespace Photon.View
             string text = I18N.GetString("Photon") + " " + UpdateChecker.Version + "\n" +
                           (enabled ?
                               I18N.GetString("System Proxy On: ") + (global ? I18N.GetString("Global") : I18N.GetString("PAC")) :
-                              String.Format(I18N.GetString("Running: Port {0}"), config.localPort))  // this feedback is very important because they need to know Shadowsocks is running
+                              String.Format(I18N.GetString("Running: Port {0}"), config.localPort))  // this feedback is very important because they need to know Photon is running
                           + "\n" + serverInfo;
             ViewUtils.SetNotifyIconText(_notifyIcon, text);
         }
@@ -770,7 +770,68 @@ namespace Photon.View
             {
                 ShowConfigForm();
             }
+            //try
+            //{
+            //    IDataObject iData = Clipboard.GetDataObject();
+            //    if (success)
+            //    {
+            //        List<string> urls = new List<string>();
+            //        URL_Split((string)iData.GetData(DataFormats.Text), ref urls);
+            //        int count = 0;
+            //        foreach (string url in urls)
+            //        {
+            //            if (controller.AddServerBySSURL(url))
+            //                ++count;
+            //        }
+            //        if (count > 0)
+            //            ShowConfigForm(true);
+            //    }
+            //}
+            //catch
+            //{
+
+            //}
         }
+        private void ShowConfigForm(bool addNode)
+        {
+            if (configForm != null)
+            {
+                configForm.Activate();
+                if (addNode)
+                {
+                    Configuration cfg = controller.GetCurrentConfiguration();
+                    configForm.SetServerListSelectedIndex(cfg.index + 1);
+                }
+            }
+            else
+            {
+                //configForm = new ConfigForm(controller, updateChecker, addNode ? -1 : -2);
+                configForm.Show();
+                configForm.Activate();
+                configForm.BringToFront();
+                configForm.FormClosed += configForm_FormClosed;
+            }
+        }
+        //private void URL_Split(string text, ref List<string> out_urls)
+        //{
+        //    if (String.IsNullOrEmpty(text))
+        //    {
+        //        return;
+        //    }
+        //    int ss_index = text.IndexOf("ss://", 1, StringComparison.OrdinalIgnoreCase);
+        //    int ssr_index = text.IndexOf("ssr://", 1, StringComparison.OrdinalIgnoreCase);
+        //    int index = ss_index;
+        //    if (index == -1 || index > ssr_index && ssr_index != -1) index = ssr_index;
+        //    if (index == -1)
+        //    {
+        //        out_urls.Insert(0, text);
+        //    }
+        //    else
+        //    {
+        //        out_urls.Insert(0, text.Substring(0, index));
+        //        URL_Split(text.Substring(index), ref out_urls);
+        //    }
+        //}
 
         void splash_FormClosed(object sender, FormClosedEventArgs e)
         {

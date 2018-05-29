@@ -10,3 +10,7 @@ shadowsocks-csharp/3rd/*
 packages/*
 
 shadowsocks-csharp.sln.DotSettings.user
+/Photon/Encryption
+/Photon/Model
+/Photon/Obfs
+/Photon/Util

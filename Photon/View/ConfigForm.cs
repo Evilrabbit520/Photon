@@ -21,12 +21,20 @@ namespace Photon.View
 {
     public partial class ConfigForm : Form
     {
+
         [DllImport("wininet")]
         private extern static bool InternetGetConnectedState(out int connectionDescription, int reservedValue);
         private PhotonController controller;
         // this is a copy of configuration that we are working on
         private Configuration _modifiedConfiguration;
         private int _lastSelectedIndex = -1;
+        private int _oldSelectedIndex = -1;
+        private bool _allowSave = true;
+        private bool _ignoreLoad = false;
+        private string _oldSelectedID = null;
+
+        private string _SelectedID = null;
+
 
         public ConfigForm(PhotonController controller)
         {
@@ -40,7 +48,6 @@ namespace Photon.View
             this.Icon = Icon.FromHandle(Resources.ssw128.GetHicon());
             this.controller = controller;
             controller.ConfigChanged += controller_ConfigChanged;
-            LoadCurrentConfiguration();
             CpuID_verification();
         }
 
@@ -58,10 +65,10 @@ namespace Photon.View
             PasswordLabel.Text = I18N.GetString("Password");
             ShowPasswdCheckBox.Text = I18N.GetString("Show Password");
             EncryptionLabel.Text = I18N.GetString("Encryption");
-            //LabConf.Text = I18N.GetString("Confused");
-            //LabConP.Text = I18N.GetString("Confusion par");
-            //PluginLabel.Text = I18N.GetString("Plugin");
-            //PluginOptionsLabel.Text = I18N.GetString("Plugin Options");
+            ProtocolLabel.Text = I18N.GetString("Confused");    //建议修改翻译文件
+            ProtocolparamLabel.Text = I18N.GetString("Confusion par");  //建议修改翻译文件
+            ConfusedLabel.Text = I18N.GetString("Plugin");      //建议修改翻译文件
+            ConfusedparamLabel.Text = I18N.GetString("Plugin Options");   //建议修改翻译文件
             ProxyPortLabel.Text = I18N.GetString("Proxy Port");
             RemarksLabel.Text = I18N.GetString("Remarks");
             TimeoutLabel.Text = I18N.GetString("Timeout(Sec)");
@@ -78,7 +85,7 @@ namespace Photon.View
 
         private void controller_ConfigChanged(object sender, EventArgs e)
         {
-            LoadCurrentConfiguration();
+            
         }
 
         private void ShowWindow()
@@ -488,6 +495,26 @@ namespace Photon.View
             form1.Show();
 
         }
+
+        public void SetServerListSelectedIndex(int index)
+        {
+            ServersListBox.ClearSelected();
+            if (index < ServersListBox.Items.Count)
+                ServersListBox.SelectedIndex = index;
+            else
+                _oldSelectedIndex = ServersListBox.SelectedIndex;
+        }
+
+        private void LoadCurrentConfigurationcopy()
+        {
+            _modifiedConfiguration = controller.GetConfiguration();
+            LoadConfiguration(_modifiedConfiguration);
+            _allowSave = false;
+            SetServerListSelectedIndex(_modifiedConfiguration.index);
+            _allowSave = true;
+            LoadSelectedServer();
+        }
+
         private void CpuID_verification()
         {
             

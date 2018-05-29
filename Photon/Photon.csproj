@@ -127,15 +127,26 @@
     <Compile Include="Encryption\EncryptorFactory.cs" />
     <Compile Include="Encryption\Exception\CryptoException.cs" />
     <Compile Include="Encryption\IEncryptor.cs" />
+    <Compile Include="Encryption\Libcrypto.cs" />
     <Compile Include="Encryption\MbedTLS.cs" />
     <Compile Include="Encryption\RNG.cs" />
+    <Compile Include="Encryption\RSA.cs" />
     <Compile Include="Encryption\Sodium.cs" />
     <Compile Include="Encryption\Stream\StreamEncryptor.cs" />
     <Compile Include="Encryption\Stream\StreamMbedTLSEncryptor.cs" />
     <Compile Include="Encryption\Stream\StreamSodiumEncryptor.cs" />
     <Compile Include="Model\HotKeyConfig.cs" />
+    <Compile Include="Model\MinSearchTree.cs" />
     <Compile Include="Model\ProxyConfig.cs" />
     <Compile Include="Model\SysproxyConfig.cs" />
+    <Compile Include="Obfs\Auth.cs" />
+    <Compile Include="Obfs\AuthChain.cs" />
+    <Compile Include="Obfs\HttpSimpleObfs.cs" />
+    <Compile Include="Obfs\IObfs.cs" />
+    <Compile Include="Obfs\ObfsBase.cs" />
+    <Compile Include="Obfs\ObfsFactory.cs" />
+    <Compile Include="Obfs\Plain.cs" />
+    <Compile Include="Obfs\VerifySimpleObfs.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +186,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="StringEx.cs" />
     <Compile Include="Controller\System\Hotkeys\Hotkeys.cs" />
+    <Compile Include="Util\Base64.cs" />
     <Compile Include="Util\CRC.cs" />
     <Compile Include="Util\ProcessManagement\Job.cs" />
     <Compile Include="Util\ProcessManagement\ThreadUtil.cs" />
